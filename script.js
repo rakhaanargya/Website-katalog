@@ -27,14 +27,9 @@ function getUrlGambar(gambar) {
         return "image/no-image.jpg";
     }
 
-    // Foto dari folder uploads backend
-    if (gambar.startsWith("/uploads/")) {
-        return "http://localhost:3000/api/produk" + gambar;
-    }
-
-    // Foto lama dari folder image
     return gambar;
 }
+
 
 
 // ================================
@@ -45,13 +40,14 @@ async function ambilProduk() {
 
     try {
 
-       const response =
-    await fetch("/api/produk");
+        const response = await fetch(
+            "https://chococanaa.ranargya10.workers.dev/api/produk"
+        );
 
         if (!response.ok) {
 
             throw new Error(
-                "Gagal mengambil produk dari server."
+                `Server error: ${response.status}`
             );
 
         }
@@ -63,11 +59,19 @@ async function ambilProduk() {
             produk
         );
 
+        console.log(
+            "Jumlah produk:",
+            produk.length
+        );
+
         tampilkanProduk(produk);
 
     } catch (error) {
 
-        console.error(error);
+        console.error(
+            "Gagal mengambil produk:",
+            error
+        );
 
         if (produkContainer) {
 
