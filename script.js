@@ -37,54 +37,38 @@ function getUrlGambar(gambar) {
 // ================================
 
 async function ambilProduk() {
-
     try {
-
         const response = await fetch(
             "https://chococanaa.ranargya10.workers.dev/api/produk"
         );
 
         if (!response.ok) {
-
             throw new Error(
-                `Server error: ${response.status}`
+                "Gagal mengambil produk dari server."
             );
-
         }
 
         produk = await response.json();
 
-        console.log(
-            "Produk dari database:",
-            produk
-        );
-
-        console.log(
-            "Jumlah produk:",
-            produk.length
-        );
+        console.log("Produk dari database:", produk);
+        console.log("Jumlah produk:", produk.length);
 
         tampilkanProduk(produk);
 
     } catch (error) {
-
         console.error(
-            "Gagal mengambil produk:",
+            "Error mengambil produk:",
             error
         );
 
         if (produkContainer) {
-
             produkContainer.innerHTML = `
                 <p class="tidak-ditemukan">
                     Gagal mengambil data produk.
                 </p>
             `;
-
         }
-
     }
-
 }
 
 

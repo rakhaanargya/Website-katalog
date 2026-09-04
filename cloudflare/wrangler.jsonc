@@ -1,0 +1,18 @@
+{
+    "name": "chococanaa",
+    "main": "index.js",
+    "compatibility_date": "2026-09-03",
+
+    "assets": {
+        "directory": ".."
+    },
+
+    "d1_databases": [
+        {
+            "binding": "chococanaa_db",
+            "database_name": "chococanaa-db",
+            "database_id": "b213a110-de72-4c9f-b138-cba3b5b53545",
+            "remote": true
+        }
+    ]
+}

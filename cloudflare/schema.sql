@@ -1,0 +1,19 @@
+CREATE TABLE IF NOT EXISTS produk (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nama TEXT NOT NULL,
+    kategori TEXT NOT NULL,
+    harga INTEGER NOT NULL,
+    gambar TEXT,
+    deskripsi TEXT,
+    stok INTEGER DEFAULT 0,
+    status_po TEXT DEFAULT 'buka',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    role TEXT DEFAULT 'admin',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
