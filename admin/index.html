@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Admin Chococanaa</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header class="admin-header">
+
+        <h1>
+            Admin Chococanaa
+        </h1>
+
+        <a href="../index.html">
+            ← Kembali ke Website
+        </a>
+
+        <a href="#kelolaUser">
+    Kelola User
+</a>
+
+    </header>
+
+
+    <main class="admin-container">
+
+        <section class="dashboard">
+
+    <div class="dashboard-card">
+
+        <span class="dashboard-icon">
+            📦
+        </span>
+
+        <div>
+            <p>Total Produk</p>
+            <strong id="totalProduk">
+                0
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+        <span class="dashboard-icon">
+            🟢
+        </span>
+
+        <div>
+            <p>PO Dibuka</p>
+            <strong id="poDibuka">
+                0
+            </strong>
+        </div>
+
+    </div>
+
+
+    <div class="dashboard-card">
+
+        <span class="dashboard-icon">
+            🔴
+        </span>
+
+        <div>
+            <p>PO Ditutup</p>
+            <strong id="poDitutup">
+                0
+            </strong>
+        </div>
+
+    </div>
+
+</section>
+
+        <section class="admin-card">
+
+            <h2>
+                Tambah Produk
+            </h2>
+
+            <form id="formProduk">
+
+                <div class="form-group">
+
+                    <label>
+                        Nama Produk
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nama"
+                        placeholder="Contoh: Brownies Cokelat"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Kategori
+                    </label>
+
+                    <select id="kategori" required>
+
+                        <option value="">
+                            Pilih kategori
+                        </option>
+
+                        <option value="Brownies">
+                            Brownies
+                        </option>
+
+                        <option value="Cheesecake">
+                            Cheesecake
+                        </option>
+
+                        <option value="Cookies">
+                            Cookies
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Harga
+                    </label>
+
+                    <input
+                        type="number"
+                        id="harga"
+                        placeholder="60000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+    <label>
+        Gambar Produk
+    </label>
+
+    <input
+        type="file"
+        id="gambar"
+        accept="image/*"
+    >
+
+    <small id="namaFile">
+        Belum ada gambar dipilih.
+    </small>
+
+</div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Deskripsi
+                    </label>
+
+                    <textarea
+                        id="deskripsi"
+                        placeholder="Deskripsi produk..."
+                    ></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Stok
+                    </label>
+
+                    <input
+                        type="number"
+                        id="stok"
+                        value="0"
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="btn-tambah"
+                >
+                    Tambah Produk
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section class="admin-card">
+
+            <h2>
+                Daftar Produk
+            </h2>
+
+            <div id="daftarProduk">
+
+    Memuat produk...
+
+</div>
+
+<!-- ================================
+     FORM EDIT PRODUK
+================================ -->
+
+<div
+    id="formEditContainer"
+    class="edit-container"
+    style="display: none;"
+>
+
+    <h2>
+        Edit Produk
+    </h2>
+
+    <form id="formEditProduk">
+
+        <input
+            type="hidden"
+            id="editId"
+        >
+
+        <div class="form-group">
+
+            <label>
+                Nama Produk
+            </label>
+
+            <input
+                type="text"
+                id="editNama"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Kategori
+            </label>
+
+            <select
+                id="editKategori"
+                required
+            >
+
+                <option value="Brownies">
+                    Brownies
+                </option>
+
+                <option value="Cheesecake">
+                    Cheesecake
+                </option>
+
+                <option value="Cookies">
+                    Cookies
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Harga
+            </label>
+
+            <input
+                type="number"
+                id="editHarga"
+                required
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+    <label>
+        Gambar Produk
+    </label>
+
+    <input
+        type="file"
+        id="editGambar"
+        accept="image/*"
+    >
+
+    <small>
+        Kosongkan jika ingin menggunakan gambar lama.
+    </small>
+
+</div>  
+
+        <div class="form-group">
+
+            <label>
+                Deskripsi
+            </label>
+
+            <textarea
+                id="editDeskripsi"
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Stok
+            </label>
+
+            <input
+                type="number"
+                id="editStok"
+                required
+            >
+
+            <label for="editStatusPo">
+    Status Pre-Order
+</label>
+
+<select id="editStatusPo">
+
+    <option value="buka">
+        🟢 Pre-Order Dibuka
+    </option>
+
+    <option value="tutup">
+        🔴 PO Ditutup
+    </option>
+
+</select>
+
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn-tambah"
+        >
+            Simpan Perubahan
+        </button>
+
+
+        <button
+            type="button"
+            class="btn-batal"
+            onclick="batalEdit()"
+        >
+            Batal
+        </button>
+
+    </form>
+
+</div>
+
+        </section>
+
+        <section
+    id="kelolaUser"
+    class="admin-section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <h2>
+                Kelola User
+            </h2>
+
+            <p>
+                Tambahkan dan kelola akun admin.
+            </p>
+
+        </div>
+
+
+        <button
+            type="button"
+            class="btn-tambah"
+            onclick="bukaFormUser()"
+        >
+            + Tambah User
+        </button>
+
+    </div>
+
+
+    <!-- FORM USER -->
+
+    <div
+        id="formUserContainer"
+        style="display: none;"
+    >
+
+        <form id="formUser">
+
+            <input
+                type="hidden"
+                id="userId"
+            >
+
+
+            <div>
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="usernameUser"
+                    placeholder="Masukkan username"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="passwordUser"
+                    placeholder="Masukkan password"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>
+                    Role
+                </label>
+
+                <select id="roleUser">
+
+                    <option value="admin">
+                        Admin
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <button
+                    type="submit"
+                >
+                    Simpan User
+                </button>
+
+
+                <button
+                    type="button"
+                    onclick="tutupFormUser()"
+                >
+                    Batal
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+
+    <!-- DAFTAR USER -->
+
+    <div
+        id="daftarUser"
+        class="daftar-user"
+    >
+
+        <p>
+            Memuat user...
+        </p>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

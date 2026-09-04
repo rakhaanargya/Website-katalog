@@ -1,0 +1,1127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chococanaa</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header class="navbar">
+
+        <div class="container navbar-container">
+
+            <a
+                href="#home"
+                class="logo"
+            >
+                Chococanaa
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menuToggle"
+                aria-label="Buka menu"
+            >
+                ☰
+            </button>
+
+
+            <nav
+                id="mainNav"
+                class="main-nav"
+            >
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#produk">
+                    Produk
+                </a>
+
+                <a href="#tentang">
+                    Tentang
+                </a>
+
+                <a href="#kontak">
+                    Kontak
+                </a>
+                
+
+            </nav>
+
+
+            <button
+                class="cart-button"
+                onclick="bukaKeranjang()"
+            >
+
+                🛒
+
+                <span id="jumlahKeranjang">
+                    0
+                </span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+
+        <!-- =========================
+             HOME / HERO
+        ========================== -->
+
+        <section
+            id="home"
+            class="hero"
+        >
+
+            <div class="container hero-content">
+
+
+                <div class="hero-text">
+
+                    <p class="hero-label">
+                        HOMEMADE • FRESH • PREMIUM
+                    </p>
+
+
+                    <h1>
+
+                        Manisnya Bikin
+
+                        <span>
+                            Jatuh Hati
+                        </span>
+
+                    </h1>
+
+
+                    <p>
+                        Nikmati berbagai pilihan brownies,
+                        cheesecake, cookies, dan dessert
+                        favorit dari Chococanaa.
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a
+                            href="#produk"
+                            class="hero-button utama"
+                        >
+                            Lihat Produk
+                        </a>
+
+
+                        <a
+                            href="#tentang"
+                            class="hero-button kedua"
+                        >
+                            Tentang Kami
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="hero-image">
+
+                    <img
+                        src="image/Poster.png"
+                        alt="Brownies Chococanaa"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KATALOG PRODUK
+        ========================== -->
+
+        <section id="produk">
+
+            <div class="container">
+
+
+                <h2>
+                    Katalog Produk
+                </h2>
+
+
+                <!-- SEARCH -->
+
+                <div class="search-box">
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Cari produk..."
+                    >
+
+                </div>
+
+
+
+                <!-- FILTER -->
+
+                <div class="filter-buttons">
+
+                    <button
+                        class="filter active"
+                        data-category="Semua"
+                    >
+                        Semua
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-category="Brownies"
+                    >
+                        Brownies
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-category="Cheesecake"
+                    >
+                        Cheesecake
+                    </button>
+
+
+                    <button
+                        class="filter"
+                        data-category="Cookies"
+                    >
+                        Cookies
+                    </button>
+
+                </div>
+
+
+
+                <!-- SORT -->
+
+                <div class="sort-container">
+
+                    <label for="sortProduk">
+                        Urutkan:
+                    </label>
+
+
+                    <select id="sortProduk">
+
+                        <option value="default">
+                            Produk Terbaru
+                        </option>
+
+
+                        <option value="harga-rendah">
+                            Harga Terendah
+                        </option>
+
+
+                        <option value="harga-tinggi">
+                            Harga Tertinggi
+                        </option>
+
+
+                        <option value="nama">
+                            Nama A-Z
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- JUMLAH PRODUK -->
+
+                <p id="jumlahProdukText">
+                    Menampilkan 0 produk
+                </p>
+
+
+
+                <!-- PRODUK DARI JAVASCRIPT -->
+
+                <div
+                    class="produk-container"
+                    id="produkContainer"
+                ></div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             TENTANG KAMI
+        ========================== -->
+
+        <section
+            id="tentang"
+            class="tentang"
+        >
+
+            <div class="container">
+
+
+                <div class="tentang-content">
+
+
+                    <!-- FOTO -->
+
+                    <div class="tentang-image">
+
+                        <img
+                            src="image/Depan.png"
+                            alt="Chococanaa"
+                        >
+
+
+                        <div class="tentang-badge">
+
+                            <strong>
+                                100%
+                            </strong>
+
+                            <span>
+                                Homemade
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- TEXT -->
+
+                    <div class="tentang-text">
+
+                        <p class="section-label">
+                            TENTANG CHOCOCANAA
+                        </p>
+
+
+                        <h2>
+
+                            Dibuat dengan
+
+                            <span>
+                                rasa dan cinta.
+                            </span>
+
+                        </h2>
+
+
+                        <p class="tentang-intro">
+
+                            Chococanaa hadir untuk menghadirkan
+                            dessert yang tidak hanya enak,
+                            tetapi juga dibuat dengan penuh perhatian
+                            di setiap prosesnya.
+
+                        </p>
+
+
+                        <p>
+
+                            Kami percaya bahwa makanan yang baik
+                            dimulai dari bahan yang berkualitas,
+                            proses yang tepat, dan rasa yang dibuat
+                            dengan sepenuh hati.
+
+                        </p>
+
+
+                        <p>
+
+                            Dari brownies, cheesecake, cookies,
+                            hingga berbagai pilihan dessert lainnya,
+                            setiap produk Chococanaa dibuat untuk
+                            menemani momen manis kamu.
+
+                        </p>
+
+
+
+                        <div class="tentang-info">
+
+
+                            <div class="info-item">
+
+                                <strong>
+                                    100%
+                                </strong>
+
+                                <span>
+                                    Homemade
+                                </span>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <strong>
+                                    Fresh
+                                </strong>
+
+                                <span>
+                                    Setiap Hari
+                                </span>
+
+                            </div>
+
+
+                            <div class="info-item">
+
+                                <strong>
+                                    Premium
+                                </strong>
+
+                                <span>
+                                    Ingredients
+                                </span>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                        <a
+                            href="#produk"
+                            class="tentang-button"
+                        >
+                            Lihat Produk
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- KEUNGGULAN -->
+
+                <div class="keunggulan">
+
+
+                    <div class="keunggulan-heading">
+
+                        <p class="section-label">
+                            KENAPA CHOCOCANAA?
+                        </p>
+
+
+                        <h2>
+
+                            Karena yang manis
+
+                            <span>
+                                harus dibuat istimewa.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+
+
+                    <div class="keunggulan-grid">
+
+
+                        <div class="keunggulan-card">
+
+                            <div class="keunggulan-icon">
+                                ♡
+                            </div>
+
+
+                            <h3>
+                                Dibuat dengan Cinta
+                            </h3>
+
+
+                            <p>
+
+                                Setiap produk dibuat dengan
+                                perhatian agar rasa dan kualitasnya
+                                tetap terjaga.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="keunggulan-card">
+
+                            <div class="keunggulan-icon">
+                                ✦
+                            </div>
+
+
+                            <h3>
+                                Bahan Berkualitas
+                            </h3>
+
+
+                            <p>
+
+                                Kami memilih bahan dengan kualitas
+                                terbaik untuk menghasilkan rasa
+                                yang lebih nikmat.
+
+                            </p>
+
+                        </div>
+
+
+
+                        <div class="keunggulan-card">
+
+                            <div class="keunggulan-icon">
+                                ✓
+                            </div>
+
+
+                            <h3>
+                                Fresh & Premium
+                            </h3>
+
+
+                            <p>
+
+                                Produk dibuat dengan menjaga
+                                kesegaran dan kualitas hingga
+                                sampai ke tangan kamu.
+
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             KONTAK
+        ========================== -->
+
+        <section
+            id="kontak"
+            class="kontak"
+        >
+
+            <div class="container">
+
+
+                <div class="kontak-heading">
+
+                    <p class="section-label">
+                        HUBUNGI KAMI
+                    </p>
+
+
+                    <h2>
+
+                        Ada yang ingin
+
+                        <span>
+                            ditanyakan?
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Kami siap membantu kamu memilih
+                        dessert yang cocok untuk setiap
+                        momen spesial.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="kontak-content">
+
+
+                    <!-- INFORMASI KONTAK -->
+
+                    <div class="kontak-info">
+
+
+                        <div class="kontak-card">
+
+                            <div class="kontak-icon">
+                                ☎
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    WhatsApp
+                                </h3>
+
+
+                                <p>
+
+                                    Hubungi kami untuk pemesanan
+                                    dan informasi produk.
+
+                                </p>
+
+
+                                <a
+                                    href="https://wa.me/6285887568636"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    Chat Sekarang →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="kontak-card">
+
+                            <div class="kontak-icon">
+                                ⏰
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Jam Operasional
+                                </h3>
+
+
+                                <p>
+                                    Senin – Minggu
+                                </p>
+
+
+                                <strong>
+                                    09.00 – 21.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="kontak-card">
+
+                            <div class="kontak-icon">
+                                📍
+                            </div>
+
+
+                            <div>
+
+                                <h3>
+                                    Lokasi
+                                </h3>
+
+
+                                <p>
+
+                                    Melayani pemesanan online
+                                    dan pengantaran sesuai area.
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- FORM KONTAK -->
+
+                    <div class="kontak-form">
+
+                        <h3>
+                            Kirim Pesan
+                        </h3>
+
+
+                        <p>
+
+                            Isi formulir berikut dan
+                            kami akan menghubungi kamu.
+
+                        </p>
+
+
+
+                        <form id="formKontak">
+
+
+                            <div class="form-group">
+
+                                <label for="nama">
+                                    Nama
+                                </label>
+
+
+                                <input
+                                    type="text"
+                                    id="nama"
+                                    placeholder="Nama kamu"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="nomor">
+                                    Nomor WhatsApp
+                                </label>
+
+
+                                <input
+                                    type="tel"
+                                    id="nomor"
+                                    placeholder="08xxxxxxxxxx"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <div class="form-group">
+
+                                <label for="pesan">
+                                    Pesan
+                                </label>
+
+
+                                <textarea
+                                    id="pesan"
+                                    rows="5"
+                                    placeholder="Tulis pesan kamu..."
+                                    required
+                                ></textarea>
+
+                            </div>
+
+
+
+                            <button
+                                type="submit"
+                                class="form-button"
+                            >
+                                Kirim ke WhatsApp
+                            </button>
+
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================
+         KERANJANG
+    ========================== -->
+
+    <div
+        id="keranjang"
+        class="keranjang"
+    >
+
+        <div class="keranjang-box">
+
+
+            <button
+                class="tutup-keranjang"
+                onclick="tutupKeranjang()"
+            >
+                ×
+            </button>
+
+
+            <h2>
+                Keranjang Belanja
+            </h2>
+
+
+            <div id="isiKeranjang"></div>
+
+
+            <div class="total-keranjang">
+
+                <strong>
+                    Total:
+                </strong>
+
+
+                <strong id="totalHarga">
+                    Rp0
+                </strong>
+
+            </div>
+
+
+            <button
+                class="checkout-button"
+                onclick="checkoutWhatsApp()"
+            >
+                Checkout WhatsApp
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         MODAL DETAIL PRODUK
+    ========================== -->
+
+    <div
+        id="detailModal"
+        class="detail-modal"
+    >
+
+        <div class="detail-modal-box">
+
+
+            <button
+                class="detail-close"
+                onclick="tutupDetail()"
+                aria-label="Tutup detail"
+            >
+                ×
+            </button>
+
+
+            <div
+                id="detailModalContent"
+                class="detail-modal-content"
+            ></div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         WHATSAPP FLOATING
+    ========================== -->
+
+    <a
+        href="https://wa.me/6285887568636"
+        target="_blank"
+        rel="noopener"
+        class="floating-whatsapp"
+        aria-label="Chat WhatsApp"
+    >
+
+        <span>
+            ☎
+        </span>
+
+    </a>
+
+
+
+    <!-- =========================
+         NOTIFIKASI
+    ========================== -->
+
+    <div
+        id="notifikasi"
+        class="notifikasi"
+    >
+
+        <span class="notifikasi-icon">
+            ✓
+        </span>
+
+
+        <div>
+
+            <strong>
+                Berhasil!
+            </strong>
+
+
+            <p id="pesanNotifikasi">
+                Produk ditambahkan ke keranjang.
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+
+            <div class="footer-content">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="#home"
+                        class="footer-logo"
+                    >
+                        Chococanaa
+                    </a>
+
+
+                    <p>
+
+                        Dessert homemade dengan rasa
+                        yang dibuat untuk menemani
+                        setiap momen manis kamu.
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/6285887568636"
+                        target="_blank"
+                        rel="noopener"
+                        class="footer-wa"
+                    >
+                        WhatsApp Kami →
+                    </a>
+
+                </div>
+
+
+
+                <!-- NAVIGASI -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Navigasi
+                    </h3>
+
+
+                    <a href="#home">
+                        Home
+                    </a>
+
+
+                    <a href="#produk">
+                        Produk
+                    </a>
+
+
+                    <a href="#tentang">
+                        Tentang Kami
+                    </a>
+
+
+                    <a href="#kontak">
+                        Kontak
+                    </a>
+
+                </div>
+
+
+
+                <!-- PRODUK -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Produk
+                    </h3>
+
+
+                    <a href="#produk">
+                        Brownies
+                    </a>
+
+
+                    <a href="#produk">
+                        Cheesecake
+                    </a>
+
+
+                    <a href="#produk">
+                        Cookies
+                    </a>
+
+
+                    <a href="#produk">
+                        Dessert
+                    </a>
+
+                </div>
+
+
+
+                <!-- INFORMASI -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Informasi
+                    </h3>
+
+
+                    <p>
+                        Senin – Minggu
+                    </p>
+
+
+                    <p>
+                        09.00 – 21.00
+                    </p>
+
+
+                    <p>
+                        Melayani pemesanan
+                        sesuai area.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <div class="footer-bottom">
+
+                <p>
+
+                    © 2026 Chococanaa.
+                    All Rights Reserved.
+
+                </p>
+
+
+                <p>
+                    Made with ♡
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </footer>
+
+    <footer class="footer">
+
+    <p>
+        © 2026 Chococanaa. All Rights Reserved.
+    </p>
+
+    <a href="admin/login.html" class="admin-login-hidden">
+        Admin
+    </a>
+
+</footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
